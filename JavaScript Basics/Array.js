@@ -118,3 +118,35 @@ console.log(arr_04);
 
 /** Copying Arrays */
 const original=[true,true,undefined,false,null];
+
+// slice
+const copy1=original.slice(0);
+console.log(copy1);
+
+// spread operator
+//const copy2=[...origional];
+//console.log(copy2);
+
+/** The above two will not work if there is object inside the array,
+ *  then you need to use DEEP copying.
+ *  Because when a oject inside an array, normally we just copy the pointer
+ *  to the object. so when add, we add to the pointer of the origional array.
+ */
+// DEEP copying 
+let deepArray_1=[["Eric"]];
+let deepArray_2=[["Eric"]];
+let shallowCopy=deepArray_1.slice(0);
+
+shallowCopy[0].push(" is great!");
+console.log(deepArray_1[0],shallowCopy[0]);
+// both is added with "is great!"
+// [ 'Eric', ' is great!' ] [ 'Eric', ' is great!' ]
+
+// The DEET Copy
+// convert the array into json, then convert json into js object or array.
+const deepCopy=JSON.parse(JSON.stringify(deepArray_2));
+
+deepCopy[0].push(" is great!");
+console.log(deepArray_2[0],deepCopy[0]);
+// [ 'Eric' ] [ 'Eric', ' is great!' ]
+// the original remian origional!
