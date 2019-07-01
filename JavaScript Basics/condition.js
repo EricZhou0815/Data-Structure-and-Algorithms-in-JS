@@ -43,3 +43,18 @@ Greeting("Tom");
 
 /** Ternary Operator */
 
+// condition ? expr1：expr2
+function newGreet(ifBoy){
+    const greeting=ifBoy?"Hello guys!":"Hello grils!";
+    console.log(greeting);
+}
+
+newGreet(true);
+// Hello guys!
+
+let age=15;
+console.log((age>=18)?"You can smoke!":"Sorry, you can't smoke yet.");
+// Sorry, you can't smoke yet.
+
+
+/** Switch */
