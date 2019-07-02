@@ -73,5 +73,17 @@ console.log(String(sb1));
 const myCar=new Object();
 myCar.make="Toyota";
 myCar.model="R15";
+myCar.color="silver";
+myCar["capacity"]=4;
 console.log(myCar.make);
 // Toyota
+console.log(myCar.capacity);
+// 4
+
+/** Convertion between data types */
+
+/** String to Int */
+const str1="007";
+const num1=parseInt(str1);
+console.log(num1);
+// 7

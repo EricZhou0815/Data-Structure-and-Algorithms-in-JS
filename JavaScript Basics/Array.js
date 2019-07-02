@@ -150,3 +150,74 @@ deepCopy[0].push(" is great!");
 console.log(deepArray_2[0],deepCopy[0]);
 // [ 'Eric' ] [ 'Eric', ' is great!' ]
 // the original remian origional!
+
+
+
+/** Array iteration: 8 methods */
+
+// forEach
+// loop each item
+const array01=[1,2,3];
+array01.forEach(function(i,index){
+    i+=1;
+    console.log(i,index);
+})
+
+// map
+// operate on each item
+const array02=[1,2,3];
+const doubled=array02.map((item)=>{
+    return item*2;
+});
+console.log(doubled);
+
+// filter
+// loop each item and check condition, if meets the condition,
+// puts back the item to the array, otherwise remove the item.
+const ints=[1,2,3,4];
+const evens=ints.filter((item)=>{
+    return item%2===0;
+});
+console.log(evens);
+
+// reduce
+// iterate the array, then do something, then pass the result to
+// the next iteration, normmally using it to do a sum.
+const sum=[1,2,3,4].reduce((result,item)=>{
+    return result+item;
+},0); // 0 is the inital value of result.
+console.log(sum);
+
+// some
+// iterate the array, check if any item meets the condition, if yes,
+// return true, if no item meets the condition, return false.
+const hasNegativeNumber=[1,2,3,-1,4].some((item)=>{
+    return item<0;
+});
+console.log(hasNegativeNumber);
+
+// every
+// iterate the array, check if all items meet the condition, if yes,
+// return true, if no item meets the condition, return false.
+const allPositiveNumber=[1,2,3,-1,4].every((item)=>{
+    return item>0;
+});
+console.log(allPositiveNumber);
+
+// find
+// search for specific item, and return the item.
+// can be used to get item by id or value.
+const obj01=[{id:1},{id:2},{id:3}];
+const found=obj01.find((item)=>{
+    return item.id==3;
+})
+console.log(found);
+
+// find index
+// search for specific item, and return the index of this item.
+// if it doesn't find match, return -1.
+const obj02=[{id:1},{id:2},{id:3}];
+const foundIndex=obj02.findIndex((item)=>{
+    return item.id==3;
+})
+console.log(foundIndex);
